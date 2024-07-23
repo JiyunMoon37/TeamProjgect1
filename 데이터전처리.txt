@@ -1,0 +1,59 @@
+[데이터 전처리]
+
+'통계분류(1)' : 'class1',
+'통계분류(2)' : 'class2',
+'국내전체'    : 'dm_total',
+'국내숙박'    : 'dm_stay',
+'국내당일'    : 'dm_1day',
+'관광전체'    : 'tr_total',
+'관광숙박'    : 'tr_stay',
+'관광당일'    : 'tr_1day',
+'기타전체'    : 'ot_total',
+'기타숙박'    : 'ot_stay',
+'기타당일'    : 'ot_1day'
+
+df_18.loc[0, ['class1']] = "category-sum"
+df_18.loc[1:2, ['class1']] = "sex"
+df_18.loc[3:9, ['class1']] = "age"
+df_18.loc[10:16, ['class1']] = "job"
+df_18.loc[17:20, ['class1']] = "edu"
+df_18.loc[21:23, ['class1']] = "fam"
+df_18.loc[24:30, ['class1']] = "income"
+
+df_18.loc[0, ["class2"]] = "sum"
+df_18.loc[df_18["class2"] == "남자", "class2"] = "M"
+df_18.loc[df_18["class2"] == "여자", "class2"] = "F"
+df_18.loc[df_18["class2"] == "15~19세"  , "class2"] = "10s"
+df_18.loc[df_18["class2"] == "20대"     , "class2"] = "20s"
+df_18.loc[df_18["class2"] == "30대"     , "class2"] = "30s"
+df_18.loc[df_18["class2"] == "40대"     , "class2"] = "40s"
+df_18.loc[df_18["class2"] == "50대"     , "class2"] = "50s"
+df_18.loc[df_18["class2"] == "60대"     , "class2"] = "60s"
+df_18.loc[df_18["class2"] == "70세 이상", "class2"] = "70s~"
+df_18.loc[df_18["class2"] == "임금봉급근로자"    , "class2"] = "work"
+df_18.loc[df_18["class2"] == "고용원있는사업주"  , "class2"] = "co_ceo"
+df_18.loc[df_18["class2"] == "고용원없는자영업자", "class2"] = "self-ceo"
+df_18.loc[df_18["class2"] == "무급가족 종사자"   , "class2"] = "fam_work"
+df_18.loc[df_18["class2"] == "전업주부"          , "class2"] = "house_work"
+df_18.loc[df_18["class2"] == "학생"              , "class2"] = "stu"
+df_18.loc[df_18["class2"] == "기타"              , "class2"] = "etc"
+df_18.loc[df_18["class2"] == "초졸 이하" , "class2"] = "~prime_edu"
+df_18.loc[df_18["class2"] == "중학교"    , "class2"] = "middle_edu"
+df_18.loc[df_18["class2"] == "고등학교"  , "class2"] = "high_edu"
+df_18.loc[df_18["class2"] == "대학교이상", "class2"] = "univ_edu~"
+df_18.loc[df_18["class2"] == "1인"    , "class2"] = "1p"
+df_18.loc[df_18["class2"] == "2인"    , "class2"] = "2p"
+df_18.loc[df_18["class2"] == "3인이상", "class2"] = "3p~"
+df_18.loc[df_18["class2"] == "100만원 미만"    , "class2"] = "~100"
+df_18.loc[df_18["class2"] == "100~200만원 미만", "class2"] = "100~200"
+df_18.loc[df_18["class2"] == "200~300만원 미만", "class2"] = "200~300"
+df_18.loc[df_18["class2"] == "300~400만원 미만", "class2"] = "300~400"
+df_18.loc[df_18["class2"] == "400~500만원 미만", "class2"] = "400~500"
+df_18.loc[df_18["class2"] == "500~600만원 미만", "class2"] = "500~600"
+df_18.loc[df_18["class2"] == "600만원 이상"    , "class2"] = "600~"
+
+
+
+
+
+
